@@ -1,12 +1,9 @@
 import React from "react";
 
-function ThemeButton(props) {
+function ThemeButton({ theme, navigateTo }) {
   return (
-    <button
-      className="theme-button"
-      onClick={() => props.navigateTo("theme", props.theme)}
-    >
-      {props.theme}
+    <button className="theme-button" onClick={() => navigateTo("theme", theme)}>
+      {theme}
     </button>
   );
 }
