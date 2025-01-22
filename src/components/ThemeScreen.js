@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Deck from "./Deck";
+import config from "../data/config.json";
 
-function ThemeScreen({ themeName, navigateTo }) {
+function ThemeScreen({ theme, navigateTo }) {
   //Set to empty array before api is called.
   const [questions, setQuestions] = useState(null);
-
+  // State to hold the questions array with irrelevant themes filtered.
   const [filteredQuestions, setFilteredQuestions] = useState(null);
 
   //**TODO** Swap jsonplaceholder out for link to relevant questions
@@ -18,11 +19,17 @@ function ThemeScreen({ themeName, navigateTo }) {
     }
   }, []);
 
-  //**TODO** Set filters to match chosen theme - This will match the key in fetched array
   //Once questions fetched, filters the array of questions
   useEffect(() => {
     if (questions) {
-      const filtered = questions.filter((q) => q.userId === 1);
+      /* UNCOMMENT WHEN JSON READY // Filters questions from the array by checking the question's theme matches the current selected theme.
+      const filtered = questions.filter(
+        (q) => q.theme === theme.displayText
+      ); */
+
+      const filtered = questions.filter(
+        (q) => q.userId === config.sections.themes.ref1
+      );
       setFilteredQuestions(filtered);
       console.log(filteredQuestions);
     }
@@ -31,9 +38,9 @@ function ThemeScreen({ themeName, navigateTo }) {
   //console.log(questions);
   return (
     <div className="main-container">
-      <h1>{themeName}</h1>
+      <h1>{theme.displayText}</h1>
       <button onClick={() => navigateTo("home")}>Home</button>
-      <Deck theme={themeName} questions={questions} />
+      <Deck theme={theme} questions={questions} />
     </div>
   );
 }

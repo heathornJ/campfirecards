@@ -28,9 +28,10 @@ function Deck({ theme, questions }) {
 
   return (
     <div>
-      <button onClick={drawCards}>I am the deck of {theme}</button>
-      <Card question={selectedQuestions[0].title} />
-      <Card question={selectedQuestions[1].title} />
+      <button onClick={drawCards}>I am the deck of {theme.displayText}</button>
+      {/* TODO: Remove .title when json file is ready */}
+      <Card questions={selectedQuestions[0].title} />
+      <Card questions={selectedQuestions[1].title} />
     </div>
   );
 }

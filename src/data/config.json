@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "homeScreen": {},
+    "themeScreen": {},
+    "deck": {},
+    "themes": {
+      "ref1": 1,
+      "ref2": 2,
+      "yourPast": {
+        "key": "yourPast",
+        "displayText": "Your Past"
+      },
+      "yourPresent": {
+        "key": "yourPresent",
+        "displayText": "Your Past"
+      }
+    }
+  }
+}

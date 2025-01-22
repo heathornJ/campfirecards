@@ -12,13 +12,7 @@ const useScreenHandlers = () => {
       case "home":
         return <HomeScreen navigateTo={navigateTo} />;
       case "theme":
-        return (
-          <ThemeScreen
-            navigateTo={navigateTo}
-            themeName={screen.themeName}
-            questionId={screen.name}
-          />
-        );
+        return <ThemeScreen navigateTo={navigateTo} theme={screen.theme} />;
       default:
         return <HomeScreen navigateTo={navigateTo} />;
     }
