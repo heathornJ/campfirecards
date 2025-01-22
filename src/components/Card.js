@@ -2,10 +2,13 @@ import React from "react";
 
 // Displays a random question, determined in Deck, as the button text
 function Card({ questions }) {
-  {
-    /* Add multiple lines of text based on questions & subquestions passed through */
-  }
-  return <button>{questions}</button>;
+  if (!questions) return <div></div>;
+  return (
+    <button>
+      {questions.question} <br />{" "}
+      {questions.subQuestion[0] !== "" ? questions.subQuestion[0] : ""}
+    </button>
+  );
 }
 
 export default Card;

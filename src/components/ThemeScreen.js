@@ -12,7 +12,9 @@ function ThemeScreen({ theme, navigateTo }) {
   // Checks if the questions state is empty and then fetches the data and sets the state if it is.
   useEffect(() => {
     if (!questions) {
-      fetch("https://jsonplaceholder.typicode.com/todos")
+      fetch(
+        "https://raw.githubusercontent.com/heathornJ/campfirequestions/main/questions.json"
+      )
         .then((response) => response.json())
         .then((data) => setQuestions(data))
         .catch((error) => console.error("Error fetching questions:", error));
@@ -22,14 +24,8 @@ function ThemeScreen({ theme, navigateTo }) {
   //Once questions fetched, filters the array of questions
   useEffect(() => {
     if (questions) {
-      /* UNCOMMENT WHEN JSON READY // Filters questions from the array by checking the question's theme matches the current selected theme.
-      const filtered = questions.filter(
-        (q) => q.theme === theme.displayText
-      ); */
-
-      const filtered = questions.filter(
-        (q) => q.userId === config.sections.themes.ref1
-      );
+      // Filters questions from the array by checking the question's theme matches the current selected theme.
+      const filtered = questions.filter((q) => q.theme === theme.key);
       setFilteredQuestions(filtered);
       console.log(filteredQuestions);
     }
@@ -40,7 +36,7 @@ function ThemeScreen({ theme, navigateTo }) {
     <div className="main-container">
       <h1>{theme.displayText}</h1>
       <button onClick={() => navigateTo("home")}>Home</button>
-      <Deck theme={theme} questions={questions} />
+      <Deck theme={theme} questions={filteredQuestions} />
     </div>
   );
 }
