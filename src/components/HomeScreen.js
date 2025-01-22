@@ -7,12 +7,12 @@ function HomeScreen({ navigateTo }) {
       <h1>The Beginning of Campfire Cards</h1>
       <p>Pick your pack.</p>
       <div className="theme-buttons">
-        <ThemeButton theme="Your Past" navigateTo={navigateTo} />
-        <ThemeButton theme="Your Present" />
-        <ThemeButton theme="Your Party" />
-        <ThemeButton theme="Your Goals" />
-        <ThemeButton theme="Your View" />
-        <ThemeButton theme="Your Thoughts" />
+        <ThemeButton themeName="Your Past" navigateTo={navigateTo} />
+        <ThemeButton themeName="Your Present" navigateTo={navigateTo} />
+        <ThemeButton themeName="Your Party" />
+        <ThemeButton themeName="Your Goals" />
+        <ThemeButton themeName="Your View" />
+        <ThemeButton themeName="Your Thoughts" />
       </div>
     </div>
   );

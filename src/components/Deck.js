@@ -20,9 +20,11 @@ function Deck({ theme, questions }) {
   };
 
   // TEMP - Reports when selectedQuestions has been updated - REMOVE WHEN COMPLETE
+  /*
   useEffect(() => {
     console.log("updated selectedQuestions: ", selectedQuestions);
   }, [selectedQuestions]);
+ */
 
   return (
     <div>
