@@ -97,8 +97,10 @@ p {
 .deck {
   width: 7em;
   height: 10em;
+  background-image: url("campfirecard.png");
   margin-top: 3em;
   margin-bottom: 3em;
+  cursor: pointer;
 }
 
 .cards-container {
@@ -111,6 +113,7 @@ p {
 .card {
   display: flex;
   justify-content: center;
+  position: relative;
   min-width: 14em;
   max-width: 14em;
   min-height: 20em;
@@ -139,6 +142,20 @@ p {
   padding-bottom: 0.4em;
   margin-bottom: 0;
   border-bottom: 3px solid;
+}
+
+.card-theme {
+  position: absolute;
+  top: 2.5%;
+  font-size: 1em;
+  font-weight: 400;
+  border-radius: 1em;
+  background-color: #0c0344;
+  color: white;
+  margin: 0;
+  padding: 0.1em 0;
+  width: 150px;
+  text-align: center;
 }
 
 /* Colours for card themes */
