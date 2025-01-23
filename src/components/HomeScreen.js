@@ -13,7 +13,7 @@ function HomeScreen({ navigateTo }) {
   return (
     <div className="main-container">
       <h1>The Beginning of Campfire Cards</h1>
-      <p>Pick your pack.</p>
+      <h2>Pick your pack.</h2>
       <div className="theme-buttons">
         <ThemeButton theme={past} navigateTo={navigateTo} />
         <ThemeButton theme={present} navigateTo={navigateTo} />
