@@ -1,7 +1,9 @@
 /* Initial Defaults */
 
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 * {
@@ -11,8 +13,7 @@
 
 body {
   background-color: lightblue; /*TEMP*/
-  min-height: 100vh;
-  height: 100%;
+  height: 100vh;
 }
 
 h1 {
@@ -31,10 +32,16 @@ h2 {
 
 /* Main-container is the base of each screen */
 .main-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: darkgray;
   min-width: 500px;
   min-height: 500px;
+  height: 100%;
   width: 100%;
+  max-width: 1000px;
 }
 
 /* HomeScreen */
@@ -67,3 +74,50 @@ h2 {
 }
 
 /* ThemeScreen */
+
+.home-button {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+
+.deck-card-container {
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.deck {
+  width: 7em;
+  height: 10em;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  width: 14em;
+  height: 20em;
+  padding: 0;
+}
+
+.card-question-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 83%;
+  width: 90%;
+  margin-top: 2.5em;
+  padding: 0 1em 0 1em;
+  background-color: green;
+}

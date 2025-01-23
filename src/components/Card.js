@@ -4,10 +4,13 @@ import React from "react";
 function Card({ questions }) {
   if (!questions) return <div></div>;
   return (
-    <button>
-      {questions.question} <br />{" "}
-      {questions.subQuestion[0] !== null ? questions.subQuestion[0] : ""} <br />
-      {questions.subQuestion[1] !== null ? questions.subQuestion[1] : ""}
+    <button className="card">
+      <div className="card-question-container">
+        {questions.question} <br /> <br />
+        {questions.subQuestion[0] !== "" ? questions.subQuestion[0] : ""}
+        <br />
+        {questions.subQuestion[1] !== undefined ? questions.subQuestion[1] : ""}
+      </div>
     </button>
   );
 }

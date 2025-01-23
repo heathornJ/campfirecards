@@ -32,13 +32,14 @@ function Deck({ theme, questions }) {
  */
 
   return (
-    <div>
-      <button onClick={handleDrawCards}>
+    <div className="deck-card-container">
+      <button className="deck" onClick={handleDrawCards}>
         I am the deck of {theme.displayText}
       </button>
-      <br />
-      <Card questions={selectedQuestions[0]} />
-      <Card questions={selectedQuestions[1]} />
+      <div className="cards-container">
+        <Card questions={selectedQuestions[0]} />
+        <Card questions={selectedQuestions[1]} />
+      </div>
     </div>
   );
 }

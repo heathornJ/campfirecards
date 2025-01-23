@@ -7,7 +7,9 @@ function ThemeScreen({ theme, navigateTo }) {
   return (
     <div className="main-container">
       <h1>{theme.displayText}</h1>
-      <button onClick={() => navigateTo("home")}>Home</button>
+      <div className="home-button">
+        <button onClick={() => navigateTo("home")}>Home</button>
+      </div>
       <Deck theme={theme} questions={filteredQuestions} />
     </div>
   );
