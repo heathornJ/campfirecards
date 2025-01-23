@@ -1,18 +1,11 @@
-import React, { useEffect, useState } from "react";
-import Deck from "./Deck";
-import config from "../data/config.json";
-import useQuestions from "../hooks/useQuestions";
+import { useEffect, useState } from "react";
 
-function ThemeScreen({ theme, navigateTo }) {
-  /*
+function useQuestions(theme) {
   //Set to empty array before api is called.
   const [questions, setQuestions] = useState(null);
   // State to hold the questions array with irrelevant themes filtered.
   const [filteredQuestions, setFilteredQuestions] = useState(null);
 
-  //**TODO** Swap jsonplaceholder out for link to relevant questions
-  // Checks if the questions state is empty and then fetches the data and sets the state if it is.
-  
   useEffect(() => {
     if (!questions) {
       fetch(
@@ -33,18 +26,8 @@ function ThemeScreen({ theme, navigateTo }) {
       console.log(filteredQuestions);
     }
   }, [questions]);
-  */
 
-  //console.log(questions);
-  const { filteredQuestions } = useQuestions(theme);
-
-  return (
-    <div className="main-container">
-      <h1>{theme.displayText}</h1>
-      <button onClick={() => navigateTo("home")}>Home</button>
-      <Deck theme={theme} questions={filteredQuestions} />
-    </div>
-  );
+  return { questions, filteredQuestions };
 }
 
-export default ThemeScreen;
+export default useQuestions;
