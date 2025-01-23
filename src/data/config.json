@@ -4,8 +4,6 @@
     "themeScreen": {},
     "deck": {},
     "themes": {
-      "ref1": 1,
-      "ref2": 2,
       "yourPast": {
         "key": "yourPast",
         "displayText": "Your Past"
@@ -13,6 +11,22 @@
       "yourPresent": {
         "key": "yourPresent",
         "displayText": "Your Present"
+      },
+      "yourParty": {
+        "key": "yourParty",
+        "displayText": "Your Party"
+      },
+      "yourGoals": {
+        "key": "yourGoals",
+        "displayText": "Your Goals"
+      },
+      "yourViews": {
+        "key": "yourViews",
+        "displayText": "Your Views"
+      },
+      "yourThoughts": {
+        "key": "yourThoughts",
+        "displayText": "Your Thoughts"
       }
     }
   }

@@ -5,6 +5,10 @@ import config from "../data/config.json";
 function HomeScreen({ navigateTo }) {
   const past = config.sections.themes.yourPast;
   const present = config.sections.themes.yourPresent;
+  const party = config.sections.themes.yourParty;
+  const goals = config.sections.themes.yourGoals;
+  const views = config.sections.themes.yourViews;
+  const yourThoughts = config.sections.themes.yourThoughts;
 
   return (
     <div className="main-container">
@@ -13,10 +17,10 @@ function HomeScreen({ navigateTo }) {
       <div className="theme-buttons">
         <ThemeButton theme={past} navigateTo={navigateTo} />
         <ThemeButton theme={present} navigateTo={navigateTo} />
-        <ThemeButton theme="Your Party" />
-        <ThemeButton theme="Your Goals" />
-        <ThemeButton theme="Your Views" />
-        <ThemeButton theme="Your Thoughts" />
+        <ThemeButton theme={party} navigateTo={navigateTo} />
+        <ThemeButton theme={goals} navigateTo={navigateTo} />
+        <ThemeButton theme={views} navigateTo={navigateTo} />
+        <ThemeButton theme={yourThoughts} navigateTo={navigateTo} />
       </div>
     </div>
   );
