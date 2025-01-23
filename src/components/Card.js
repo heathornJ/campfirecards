@@ -1,17 +1,25 @@
 import React from "react";
 
 // Displays a random question, determined in Deck, as the button text
-function Card({ questions }) {
+function Card({ questions, theme }) {
   if (!questions) return <div></div>;
   return (
-    <button className="card">
+    <div className={`card ${theme.color}`}>
+      <></>
       <div className="card-question-container">
-        {questions.question} <br /> <br />
-        {questions.subQuestion[0] !== "" ? questions.subQuestion[0] : ""}
-        <br />
-        {questions.subQuestion[1] !== undefined ? questions.subQuestion[1] : ""}
+        <p className="main-question">{questions.question}</p>
+        {questions.subQuestion[0] !== "" ? (
+          <p>{questions.subQuestion[0]}</p>
+        ) : (
+          ""
+        )}
+        {questions.subQuestion[1] !== undefined ? (
+          <p>{questions.subQuestion[1]}</p>
+        ) : (
+          ""
+        )}
       </div>
-    </button>
+    </div>
   );
 }
 

@@ -37,8 +37,8 @@ function Deck({ theme, questions }) {
         I am the deck of {theme.displayText}
       </button>
       <div className="cards-container">
-        <Card questions={selectedQuestions[0]} />
-        <Card questions={selectedQuestions[1]} />
+        <Card questions={selectedQuestions[0]} theme={theme} />
+        <Card questions={selectedQuestions[1]} theme={theme} />
       </div>
     </div>
   );

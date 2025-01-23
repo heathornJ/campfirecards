@@ -6,27 +6,33 @@
     "themes": {
       "yourPast": {
         "key": "yourPast",
-        "displayText": "Your Past"
+        "displayText": "Your Past",
+        "color": "brown"
       },
       "yourPresent": {
         "key": "yourPresent",
-        "displayText": "Your Present"
+        "displayText": "Your Present",
+        "color": "blue"
       },
       "yourParty": {
         "key": "yourParty",
-        "displayText": "Your Party"
+        "displayText": "Your Party",
+        "color": "orange"
       },
       "yourGoals": {
         "key": "yourGoals",
-        "displayText": "Your Goals"
+        "displayText": "Your Goals",
+        "color": "yellow"
       },
       "yourViews": {
         "key": "yourViews",
-        "displayText": "Your Views"
+        "displayText": "Your Views",
+        "color": "green"
       },
       "yourThoughts": {
         "key": "yourThoughts",
-        "displayText": "Your Thoughts"
+        "displayText": "Your Thoughts",
+        "color": "purple"
       }
     }
   }
