@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Card from "./Card";
 
 // Receives theme and questions from ThemeScreen.
@@ -7,16 +7,21 @@ function Deck({ theme, questions }) {
   const [selectedQuestions, setSelectedQuestions] = useState(["", ""]);
 
   // Generates 2 random numbers to select an index from the questions array. Adds these questions to the array.
-  const drawCards = () => {
+  const handleDrawCards = () => {
     const maxRange = questions.length;
-    let index1 = Math.floor(Math.random() * maxRange);
-    let index2 = Math.floor(Math.random() * maxRange);
+    let index1 = randomNumberInRange(maxRange);
+    let index2 = randomNumberInRange(maxRange);
 
     while (index1 === index2) {
-      index2 = Math.floor(Math.random() * maxRange);
+      index2 = randomNumberInRange(maxRange);
     }
     // Sets the selectedQuestions state to contain the 2 random questions
     setSelectedQuestions([questions[index1], questions[index2]]);
+  };
+
+  // generates a random number between 0 and the length of a given array
+  const randomNumberInRange = (maxRange) => {
+    return Math.floor(Math.random() * maxRange);
   };
 
   // TEMP - Reports when selectedQuestions has been updated - REMOVE WHEN COMPLETE
@@ -28,7 +33,9 @@ function Deck({ theme, questions }) {
 
   return (
     <div>
-      <button onClick={drawCards}>I am the deck of {theme.displayText}</button>
+      <button onClick={handleDrawCards}>
+        I am the deck of {theme.displayText}
+      </button>
       <br />
       <Card questions={selectedQuestions[0]} />
       <Card questions={selectedQuestions[1]} />

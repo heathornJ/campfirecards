@@ -6,7 +6,8 @@ function Card({ questions }) {
   return (
     <button>
       {questions.question} <br />{" "}
-      {questions.subQuestion[0] !== "" ? questions.subQuestion[0] : ""}
+      {questions.subQuestion[0] !== null ? questions.subQuestion[0] : ""} <br />
+      {questions.subQuestion[1] !== null ? questions.subQuestion[1] : ""}
     </button>
   );
 }
