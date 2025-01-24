@@ -1,3 +1,4 @@
+import ParticlesBackground from "./components/ParticlesBackground";
 import "./styles.css";
 import useScreenHandlers from "./utils/screenHandler";
 
@@ -17,7 +18,12 @@ import useScreenHandlers from "./utils/screenHandler";
 function App() {
   const { renderScreen } = useScreenHandlers();
 
-  return <div className="App">{renderScreen()}</div>;
+  return (
+    <>
+      <ParticlesBackground />
+      <div className="App">{renderScreen()}</div>
+    </>
+  );
 }
 
 export default App;
