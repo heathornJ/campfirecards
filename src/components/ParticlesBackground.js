@@ -1,15 +1,18 @@
 import React, { useEffect } from "react";
-import particlesJS from "particles.js";
 
 const ParticlesBackground = () => {
   useEffect(() => {
-    window.particlesJS.load(
-      "particles-js",
-      process.env.PUBLIC_URL + "/particles-config.json",
-      function () {
-        console.log("Particles.js loaded");
-      }
-    );
+    if (window.particlesJS) {
+      window.particlesJS.load(
+        "particles-js",
+        process.env.PUBLIC_URL + "/particles-config.json",
+        function () {
+          console.log("Particles.js config loaded successfully");
+        }
+      );
+    } else {
+      console.error("particlesJS is not defined");
+    }
   }, []);
 
   return (
