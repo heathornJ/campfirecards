@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/campfirecards/static/css/main.a0cc4988.css",
-    "main.js": "/campfirecards/static/js/main.f8a9b0a8.js",
+    "main.js": "/campfirecards/static/js/main.fce05014.js",
     "static/js/488.0fa6f268.chunk.js": "/campfirecards/static/js/488.0fa6f268.chunk.js",
     "index.html": "/campfirecards/index.html",
     "main.a0cc4988.css.map": "/campfirecards/static/css/main.a0cc4988.css.map",
-    "main.f8a9b0a8.js.map": "/campfirecards/static/js/main.f8a9b0a8.js.map",
+    "main.fce05014.js.map": "/campfirecards/static/js/main.fce05014.js.map",
     "488.0fa6f268.chunk.js.map": "/campfirecards/static/js/488.0fa6f268.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a0cc4988.css",
-    "static/js/main.f8a9b0a8.js"
+    "static/js/main.fce05014.js"
   ]
 }
