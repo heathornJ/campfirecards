@@ -5,7 +5,7 @@ const ParticlesBackground = () => {
   useEffect(() => {
     window.particlesJS.load(
       "particles-js",
-      "/particles-config.json",
+      process.env.PUBLIC_URL + "/particles-config.json",
       function () {
         console.log("Particles.js loaded");
       }
