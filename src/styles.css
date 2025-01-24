@@ -110,7 +110,13 @@ p {
   width: 100%;
 }
 
-.card {
+.card-face-down {
+  background-image: url("campfirecard.png");
+  background-size: cover;
+}
+
+.card,
+.card-face-down {
   display: flex;
   justify-content: center;
   position: relative;
@@ -121,6 +127,7 @@ p {
   padding: 0;
   margin-left: 2em;
   margin-right: 2em;
+  cursor: pointer;
 }
 
 .card-question-container {

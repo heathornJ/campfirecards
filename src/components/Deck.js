@@ -5,6 +5,8 @@ import Card from "./Card";
 function Deck({ theme, questions }) {
   // State to keep a track of the current random questions.
   const [selectedQuestions, setSelectedQuestions] = useState(["", ""]);
+  // State to track resetkey for setting Card to facedown.
+  const [resetKey, setResetKey] = useState(0);
 
   // Generates 2 random numbers to select an index from the questions array. Adds these questions to the array.
   const handleDrawCards = () => {
@@ -17,6 +19,7 @@ function Deck({ theme, questions }) {
     }
     // Sets the selectedQuestions state to contain the 2 random questions
     setSelectedQuestions([questions[index1], questions[index2]]);
+    setResetKey((prevKey) => prevKey + 1);
   };
 
   // generates a random number between 0 and the length of a given array
@@ -35,8 +38,8 @@ function Deck({ theme, questions }) {
     <div className="deck-card-container">
       <div className="deck" onClick={handleDrawCards}></div>
       <div className="cards-container">
-        <Card questions={selectedQuestions[0]} theme={theme} />
-        <Card questions={selectedQuestions[1]} theme={theme} />
+        <Card questions={selectedQuestions[0]} theme={theme} reset={resetKey} />
+        <Card questions={selectedQuestions[1]} theme={theme} reset={resetKey} />
       </div>
     </div>
   );
