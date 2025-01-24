@@ -10,6 +10,9 @@ function Deck({ theme, questions }) {
 
   // Generates 2 random numbers to select an index from the questions array. Adds these questions to the array.
   const handleDrawCards = () => {
+    // Increments resetKey causing update on Card
+    setResetKey((prevKey) => prevKey + 1);
+
     const maxRange = questions.length;
     let index1 = randomNumberInRange(maxRange);
     let index2 = randomNumberInRange(maxRange);
@@ -17,9 +20,9 @@ function Deck({ theme, questions }) {
     while (index1 === index2) {
       index2 = randomNumberInRange(maxRange);
     }
+
     // Sets the selectedQuestions state to contain the 2 random questions
     setSelectedQuestions([questions[index1], questions[index2]]);
-    setResetKey((prevKey) => prevKey + 1);
   };
 
   // generates a random number between 0 and the length of a given array
