@@ -3,16 +3,13 @@ import "./styles.css";
 import useScreenHandlers from "./utils/screenHandler";
 
 /* TODO:
-    # Component
-  - Create LargeCard component to display card information on larger scale.
-
     # Tidying Up
   - Replace string references to theme types to config location.
+  - Tidy up & extract code across project.
 
-    # Polish
-  - Transitions for drawing cards
-  - Transition for revealing cards
-  - Transition for toggling large card
+    # Fix
+  - Card loading face-up when Deck clicked during card-flip animation
+    - Likely cause useEffect on card clashing with setTimeout on handleClick  
 */
 
 function App() {
