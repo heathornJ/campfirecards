@@ -24,15 +24,17 @@ function Card({ questions, theme, reset }) {
       the class and allowing the animation to play.
     */
     setAnimate(false);
-    setTimeout(() => setAnimate(true), 0);
-    setToggledCard((prev) => !prev);
+    setTimeout(() => setAnimate(true), 500);
+    setTimeout(() => setToggledCard((prev) => !prev), 600);
   };
 
   if (!toggledCard) {
     return (
       <div
         className={`card-face-down ${
-          animate ? "animate__animated animate__flipInY" : ""
+          animate
+            ? "animate__animated animate__flipInY"
+            : "animate__animated animate__flipOutY"
         }`}
         onClick={handleCardClick}
       ></div>
@@ -42,7 +44,9 @@ function Card({ questions, theme, reset }) {
   return (
     <div
       className={`card ${theme.color} ${
-        animate ? "animate__animated animate__flipInY" : ""
+        animate
+          ? "animate__animated animate__flipInY"
+          : "animate__animated animate__flipOutY"
       }`}
       onClick={handleCardClick}
     >
