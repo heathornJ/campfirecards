@@ -37,6 +37,19 @@ p {
   margin-bottom: 0.3em;
 }
 
+.attribute {
+  position: absolute;
+  top: 100%;
+  text-align: center;
+  color: rgb(95, 94, 94);
+  font-size: 0.7em;
+}
+
+.attribute > a {
+  color: rgb(95, 94, 94);
+  font-size: 1em;
+}
+
 /* Main-container is the base of each screen */
 .main-container {
   position: relative;

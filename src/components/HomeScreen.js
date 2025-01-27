@@ -1,6 +1,7 @@
 import React from "react";
 import ThemeButton from "./ThemeButton";
 import config from "../data/config.json";
+import Attribution from "./Attribution";
 
 function HomeScreen({ navigateTo }) {
   const past = config.sections.themes.yourPast;
@@ -22,6 +23,7 @@ function HomeScreen({ navigateTo }) {
         <ThemeButton theme={views} navigateTo={navigateTo} />
         <ThemeButton theme={yourThoughts} navigateTo={navigateTo} />
       </div>
+      <Attribution />
     </div>
   );
 }
