@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 function Card({ questions, theme, reset }) {
   // State for checking if card toggled
   const [toggledCard, setToggledCard] = useState(false);
-  // State for applying/removing animation
+  // State for applying animation
   const [animate, setAnimate] = useState(true);
 
   // Checks if resetKey state from Deck is change, sets toggledCard to false if so.
@@ -19,13 +19,15 @@ function Card({ questions, theme, reset }) {
   const handleCardClick = () => {
     /* 
       setAnimate and setTimeout work together here.
-      setAnimate removes the animate__ classes.
-      setTimeout, after 0 time, setAnimate true, re-applying
-      the class and allowing the animation to play.
+      setAnimate determines the animation to play: Out if false, In if true.
+      When clicked, set false, applying the out animation.
+      Allow anim to finish with setTimeout.
+      setToggledCard renders the new card face, setAnimate true applies the In anim. 
+      In anim plays.
     */
     setAnimate(false);
+    setTimeout(() => setToggledCard((prev) => !prev), 500);
     setTimeout(() => setAnimate(true), 500);
-    setTimeout(() => setToggledCard((prev) => !prev), 600);
   };
 
   if (!toggledCard) {
