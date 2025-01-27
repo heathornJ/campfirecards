@@ -14,6 +14,7 @@
 body {
   background-color: #0f0c27; /*TEMP*/
   height: 100vh;
+  overflow: hidden;
 }
 
 h1 {
@@ -56,12 +57,42 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   min-width: 500px;
   min-height: 500px;
   height: 709px;
   width: 100%;
   max-width: 1000px;
+}
+
+/* Alert */
+.alert {
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  background-color: #0f0c27ef;
+  border-radius: 5em;
+  backdrop-filter: blur(7px);
+}
+
+.alert > h3 {
+  color: white;
+}
+
+.alert > a {
+  color: grey;
+}
+
+.alert > p,
+.alert > ul {
+  width: 40em;
+  text-align: left;
+  color: white;
 }
 
 /* HomeScreen */
