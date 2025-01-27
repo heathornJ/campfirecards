@@ -39,7 +39,10 @@ function Deck({ theme, questions }) {
 
   return (
     <div className="deck-card-container">
-      <div className="deck" onClick={handleDrawCards}></div>
+      <div
+        className="deck animate__animated animate__fadeInDown"
+        onClick={handleDrawCards}
+      ></div>
       <div className="cards-container">
         <Card questions={selectedQuestions[0]} theme={theme} reset={resetKey} />
         <Card questions={selectedQuestions[1]} theme={theme} reset={resetKey} />
