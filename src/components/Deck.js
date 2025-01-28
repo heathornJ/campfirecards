@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Card from "./Card";
+import config from "../data/config.json";
 
 // Receives theme and questions from ThemeScreen.
 function Deck({ theme, questions }) {
@@ -55,7 +56,7 @@ function Deck({ theme, questions }) {
   return (
     <div className="deck-card-container">
       <div
-        className="deck animate__animated animate__fadeInDown"
+        className={`deck ${config.sections.anims.animate} ${config.sections.anims.fadeInDown}`}
         onClick={handleDrawCards}
       ></div>
       <div className="cards-container">

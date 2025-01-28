@@ -3,6 +3,14 @@
     "homeScreen": {},
     "themeScreen": {},
     "deck": {},
+    "cards": {},
+    "anims": {
+      "animate": "animate__animated",
+      "fadeInDown": "animate__fadeInDown",
+      "rotateInDownLeft": "animate__rotateInDownLeft",
+      "flipInY": "animate__flipInY",
+      "flipOutY": "animate__flipOutY"
+    },
     "themes": {
       "yourPast": {
         "key": "yourPast",

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import config from "../data/config.json";
 
 // Displays a random question, determined in Deck, as the button text
 function Card({
@@ -19,8 +20,25 @@ function Card({
     setToggledCard(false);
   }, [reset]);
 
+  // Decides which animation to play based on Deck clicked state
+  const useCardAnim = (index, animate, useDeckAnimation) => {
+    return useDeckAnimation[index]
+      ? `${config.sections.anims.animate} ${config.sections.anims.rotateInDownLeft}`
+      : animate
+      ? `${config.sections.anims.animate} ${config.sections.anims.flipInY}`
+      : `${config.sections.anims.animate} ${config.sections.anims.flipOutY}`;
+  };
+
+  const animationClass = useCardAnim(index, animate, useDeckAnimation);
+
+  // if questions haven't been retrieved by useQuestions, returns an empty div
   if (!questions) return <div></div>;
   const capitalTheme = theme.displayText.toUpperCase();
+
+  // Creates a <p> for every question in subQuestion if there is one available
+  const renderedSubquestions = questions.subQuestion.map((subQ, idx) =>
+    subQ ? <p key={idx}>{subQ}</p> : null
+  );
 
   // Toggles faceup/facedown card view, removes/applies animation
   const handleCardClick = () => {
@@ -28,14 +46,7 @@ function Card({
     if (useDeckAnimation[index]) {
       handleCardClickAnimation(index);
     }
-    /* 
-      setAnimate and setTimeout work together here.
-      setAnimate determines the animation to play: Out if false, In if true.
-      When clicked, set false, applying the out animation.
-      Allow anim to finish with setTimeout.
-      setToggledCard renders the new card face, setAnimate true applies the In anim. 
-      In anim plays.
-    */
+    // setAnimate and setTimeout are used toggle card: "Out" anim plays when false, card face updates, then "In" anim plays"
     setAnimate(false);
     setTimeout(() => setToggledCard((prev) => !prev), 550);
     setTimeout(() => setAnimate(true), 500);
@@ -44,13 +55,7 @@ function Card({
   if (!toggledCard) {
     return (
       <div
-        className={`card-face-down ${
-          useDeckAnimation[index]
-            ? "animate__animated animate__rotateInDownLeft"
-            : animate
-            ? "animate__animated animate__flipInY"
-            : "animate__animated animate__flipOutY"
-        }`}
+        className={`card-face-down ${animationClass}`}
         onClick={handleCardClick}
       ></div>
     );
@@ -58,28 +63,13 @@ function Card({
 
   return (
     <div
-      className={`card ${theme.color} ${
-        useDeckAnimation[index]
-          ? "animate__animated animate__rotateInDownLeft"
-          : animate
-          ? "animate__animated animate__flipInY"
-          : "animate__animated animate__flipOutY"
-      }`}
+      className={`card ${theme.color} ${animationClass}`}
       onClick={handleCardClick}
     >
       <h2 className="card-theme">{capitalTheme}</h2>
       <div className="card-question-container">
         <p className="main-question">{questions.question}</p>
-        {questions.subQuestion[0] !== "" ? (
-          <p>{questions.subQuestion[0]}</p>
-        ) : (
-          ""
-        )}
-        {questions.subQuestion[1] !== undefined ? (
-          <p>{questions.subQuestion[1]}</p>
-        ) : (
-          ""
-        )}
+        {renderedSubquestions}
       </div>
     </div>
   );
