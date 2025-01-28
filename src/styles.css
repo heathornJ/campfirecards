@@ -38,6 +38,11 @@ p {
   margin-bottom: 0.3em;
 }
 
+a {
+  color: white;
+}
+
+/* Attribution for artist */
 .attribute {
   position: absolute;
   top: 100%;
@@ -78,21 +83,13 @@ p {
   background-color: #0f0c27ef;
   border-radius: 5em;
   backdrop-filter: blur(7px);
-}
-
-.alert > h3 {
   color: white;
-}
-
-.alert > a {
-  color: grey;
 }
 
 .alert > p,
 .alert > ul {
   width: 40em;
   text-align: left;
-  color: white;
 }
 
 /* HomeScreen */

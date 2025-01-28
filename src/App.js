@@ -1,6 +1,7 @@
 import ParticlesBackground from "./components/ParticlesBackground";
 import "./styles.css";
 import useScreenHandlers from "./utils/screenHandler";
+import Alert from "./components/Alert";
 
 /* TODO:
     # Tidying Up
@@ -18,7 +19,10 @@ function App() {
   return (
     <>
       <ParticlesBackground />
-      <div className="App">{renderScreen()}</div>
+      <div className="App">
+        {renderScreen()}
+        <Alert />
+      </div>
     </>
   );
 }
