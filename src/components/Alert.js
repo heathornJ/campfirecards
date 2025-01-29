@@ -17,6 +17,12 @@ const Alert = () => {
         help improve D&D sessions for my players.
         <br />
         <br />
+        This was initially built with only desktop in mind, but I later came to
+        the conclusion that the option of using it on mobile would be
+        beneficial. If you notice any strange behaviour on mobile, do report it
+        to me below.
+        <br />
+        <br />
         It may receive occasional updates once finished, but that's not
         guaranteed. If you like what I've done or have any suggestions do let me
         know over on my{" "}
