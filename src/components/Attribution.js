@@ -1,9 +1,11 @@
+import config from "../data/config.json";
+
 function Attribution() {
   return (
-    <p class="attribute">
-      Campfire artwork{" "}
-      <a href="http://www.freepik.com" target="_blank" rel="noreferrer">
-        designed by pch.vector / Freepik
+    <p className="attribute">
+      {config.sections.attribution.p}
+      <a href={config.sections.links.freepik} target="_blank" rel="noreferrer">
+        {config.sections.attribution.a}
       </a>
     </p>
   );

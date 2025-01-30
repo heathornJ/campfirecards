@@ -1,15 +1,46 @@
 {
   "sections": {
-    "homeScreen": {},
-    "themeScreen": {},
-    "deck": {},
+    "alert": {
+      "h3": [
+        "Welcome to Campfire Cards! Here's the latest update:",
+        "Known Bugs"
+      ],
+      "p": [
+        "This is a small project built to get some practice with React and to help improve D&D sessions for my players.",
+        "This was initially built with only desktop in mind, but I later came to the conclusion that the option of using it on mobile would be beneficial. If you notice any strange behaviour on mobile, do report it to me below.",
+        "It may receive occasional updates once finished, but that's not guaranteed. If you like what I've done or have any suggestions do let me know over on my ",
+        "GitHub"
+      ],
+      "li": "Card will draw face-up if the deck is clicked during the card's flip animation.",
+      "button": "Got it!"
+    },
+    "attribution": {
+      "p": "Campfire artwork ",
+      "a": "designed by pch.vector / Freepik"
+    },
     "cards": {},
+    "deck": {},
+    "homeScreen": {
+      "h1": "The Beginning of Campfire Cards",
+      "h2": "Pick your pack"
+    },
+    "themeScreen": {},
+
     "anims": {
       "animate": "animate__animated",
       "fadeInDown": "animate__fadeInDown",
       "rotateInDownLeft": "animate__rotateInDownLeft",
       "flipInY": "animate__flipInY",
       "flipOutY": "animate__flipOutY"
+    },
+    "links": {
+      "campfireQuestions": "https://raw.githubusercontent.com/heathornJ/campfirequestions/main/questions.json",
+      "freepik": "http://www.freepik.com",
+      "gitHub": "https://github.com/heathornJ"
+    },
+    "screens": {
+      "home": "home",
+      "theme": "theme"
     },
     "themes": {
       "yourPast": {

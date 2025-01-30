@@ -1,7 +1,10 @@
 import { useState } from "react";
+import config from "../data/config.json";
 
 /* Set initialScreem to home before release */
-function useNavigation(initialScreen = { name: "home", theme: null }) {
+function useNavigation(
+  initialScreen = { name: config.sections.screens.home, theme: null }
+) {
   /*Sets the which screen component is currently displayed */
   const [screen, setScreen] = useState(initialScreen);
 

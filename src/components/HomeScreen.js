@@ -13,8 +13,8 @@ function HomeScreen({ navigateTo }) {
 
   return (
     <div className="main-container">
-      <h1>The Beginning of Campfire Cards</h1>
-      <h2>Pick your pack</h2>
+      <h1>{config.sections.homeScreen.h1}</h1>
+      <h2>{config.sections.homeScreen.h2}</h2>
       <div className="theme-buttons">
         <ThemeButton theme={past} navigateTo={navigateTo} />
         <ThemeButton theme={present} navigateTo={navigateTo} />

@@ -37,13 +37,6 @@ function Deck({ theme, questions }) {
     return Math.floor(Math.random() * maxRange);
   };
 
-  // TEMP - Reports when selectedQuestions has been updated - REMOVE WHEN COMPLETE
-  /*
-  useEffect(() => {
-    console.log("updated selectedQuestions: ", selectedQuestions);
-  }, [selectedQuestions]);
- */
-
   // Sets useDeckAnimation state for relevant card
   const handleCardClickAnimation = (index) => {
     setUseDeckAnimation((prev) => {
