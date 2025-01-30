@@ -11,8 +11,14 @@ function Deck({ theme, questions }) {
   // State to track what animation type should be used on Card components;
   const [useDeckAnimation, setUseDeckAnimation] = useState([true, true]);
 
+  const minQuestionLength = 2;
+
   // Generates 2 random numbers to select an index from the questions array. Adds these questions to the array.
   const handleDrawCards = () => {
+    if (!questions || questions.length < minQuestionLength) {
+      window.confirm(config.sections.deck.error);
+      return;
+    }
     // Increments resetKey causing update on Card
     setResetKey((prevKey) => prevKey + 1);
 

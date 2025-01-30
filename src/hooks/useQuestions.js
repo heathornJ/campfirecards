@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import config from "../data/config.json";
 
 function useQuestions(theme) {
   //Set to empty array before api is called.
@@ -8,9 +9,7 @@ function useQuestions(theme) {
 
   useEffect(() => {
     if (!questions) {
-      fetch(
-        "https://raw.githubusercontent.com/heathornJ/campfirequestions/main/questions.json"
-      )
+      fetch(config.sections.links.campfireQuestions)
         .then((response) => response.json())
         .then((data) => setQuestions(data))
         .catch((error) => console.error("Error fetching questions:", error));

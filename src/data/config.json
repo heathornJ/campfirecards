@@ -19,12 +19,14 @@
       "a": "designed by pch.vector / Freepik"
     },
     "cards": {},
-    "deck": {},
+    "deck": {
+      "error": "Questions failed to load or not enough questions in this pack. Please try again or use a different pack."
+    },
     "homeScreen": {
       "h1": "The Beginning of Campfire Cards",
       "h2": "Pick your pack"
     },
-    "themeScreen": {},
+    "themeScreen": { "buttonText": "Home" },
 
     "anims": {
       "animate": "animate__animated",
